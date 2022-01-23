@@ -20,8 +20,9 @@ public class StatusEngine {
 
     @Scheduled(fixedRate = 5000L)
     public void scheduleTaskAtFixRate() {
-        log.info("==========Execute : update pending status to done============");
+        log.info("========== Start Execute : update pending status to done============");
         userTaskService.updatePendingToDone();
         log.info("Time : " + dateTimeFormatter.format(LocalDateTime.now()));
+        log.info("========== End Execute : update pending status to done============");
     }
 }
